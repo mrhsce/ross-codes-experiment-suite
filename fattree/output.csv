@@ -1,0 +1,3 @@
+Directory,Ram,Execution time,Efficiency,hops,avg chunk latency,max chunk latency,Packets generated,Packets finished
+0.5k,3949140,5.685,74.74,4.69,410,491,536704,534359
+1k,3949140,5.676,74.52,4.69,410,489,536704,534356
