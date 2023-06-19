@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Function to remove files except .conf
-remove_files_except_conf() {
+# Function to remove files except .conf and .sh
+remove_files_except_conf_sh() {
   local directory="$1"
-  find "$directory" -type f ! -name "*.conf" -delete
+  find "$directory" -type f ! \( -name "*.conf" -o -name "*.sh" \) -delete
   find "$directory" -type d -empty -delete
 }
 
@@ -15,6 +15,6 @@ subfolders=$(find "$directory" -type f -name "*.conf" -exec dirname {} \;)
 
 # Iterate through the subfolders
 for subfolder in $subfolders; do
-  remove_files_except_conf "$subfolder"
+  remove_files_except_conf_sh "$subfolder"
   echo "Deletion in $subfolder finished."
 done
