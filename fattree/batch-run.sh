@@ -15,7 +15,7 @@ for directory in $directories; do
     echo "Execution in $directory."
     start_time=$(date +%s)
 
-    mpirun --map-by core -np 10 ../../../build/bin/model-net-synthetic-fattree --extramem=200000 --synch=3 --traffic=1 --load=0.1 --payload_sz=32  -- ./modelnet-mpi-test-fattree.conf > results.txt &
+    mpirun --map-by core -np 12 ../../../build/bin/model-net-synthetic-fattree --extramem=200000 --synch=3 --traffic=1 --load=0.1 --payload_sz=32  -- ./modelnet-mpi-test-fattree.conf > results.txt &
 
     #sleep 0.1s ! This is important to catch the PIDs successfully!
     sleep 1
